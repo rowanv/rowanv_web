@@ -2,6 +2,7 @@
 
 {% block content %}
 
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
@@ -12,96 +13,29 @@
         </div>
         <!-- /.row -->
 
-        <!-- Project One -->
-        <div class="row">
+        {% if projects_list %}
+            {% for proj in projects_list %}
+
+         <div class="row">
             <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="/static/images/oecd_unemployment_pic.png" alt="oecd unemployment pic">
+                <a href="{{ proj.link }}">
+                    <img class="img-responsive" src="{{ proj.thumbnail }}" alt="oecd unemployment pic"> 
+                    <!--img class="img-responsive" src="" alt="oecd unemployment pic"-->
                 </a>
             </div>
             <div class="col-md-5">
-                <h3>OECD Unemployment Visualization</h3>
+                <h3>{{ proj.title }}</h3>
                 <h4>Python, Pandas library, Bokeh library</h4>
-                <p>A dynamic visualization of the unemployment rates in OECD countries over the past 15 years.</p>
-                <a class="btn btn-primary" href="/portfolio/oecd_unemployment/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p>{{ proj.description }}</p>
+                <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
-        <!-- /.row -->
+            {% endfor %}
+        {% endif %}
+
 
         <hr>
 
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="/static/images/windchill_pic.png" alt="windchill pic">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Windchill Visualization</h3>
-                <h4>Python, Pandas library, Numpy library, Bokeh library</h4>
-                <p>A dynamic, visual representation of the Siple windchill formula.</p>
-                <a class="btn btn-primary" href="/portfolio/windchill/">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Three</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Four -->
-        <div class="row">
-
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Electronegativity Visualization</h3>
-                <h4>Python, Bokeh library</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Five -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x300" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project Five</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident ex quisquam hic odio repellendus atque porro distinctio quae id laboriosam facilis dolorum.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
 
         <!-- Pagination -->
         <div class="row text-center">

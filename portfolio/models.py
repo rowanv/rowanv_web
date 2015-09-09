@@ -7,7 +7,7 @@ class Project(models.Model):
 	current_project = models.BooleanField(default=False)
 	date_undertaken = models.DateField(default=timezone.now)
 	link = models.CharField(max_length = 200)
-	thumbnail = models.ImageField(blank=True)
+	thumbnail = models.ImageField(default='http://placehold.it/700x300')
 
 	def __str__(self):
 		return self.title
