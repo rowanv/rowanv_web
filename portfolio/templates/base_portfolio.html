@@ -77,6 +77,8 @@
     <script src="/static/js/bootstrap.js"></script>
 
     <!-- Custom JavaScript -->
+
+
     {% if projects_list %}
             {% for proj in projects_list %}
             <script src='/static/js/bootstrap-tags.min.js'></script>
@@ -86,12 +88,13 @@
                     // Tags.bootstrapVersion = "2";
                     $('#{{ proj.tag_name }}_tag').tags({
                         readOnly: true,
-                        tagData:['R', 'Python'],
+                        tagData: $('#{{ proj.tag_name }}_tag').text(),
                     });
                 });
             </script>
             {% endfor %}
     {% endif %}
+
 
 </body>
 

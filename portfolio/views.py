@@ -2,12 +2,13 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 import os
 
-from portfolio.models import Project
+from portfolio.models import Project, Skill
 
 
 
 def portfolio(request):
-	return render(request, 'portfolio.html', {'projects_list': Project.objects.all()})
+	return render(request, 'portfolio.html', {'projects_list': Project.objects.all(), 
+		'all_skills_list': [o.name for o in Skill.objects.all()]})
 
 def windchill(request):
 	with open('portfolio/templates/visualizations/windchill_table.html') as myfile:

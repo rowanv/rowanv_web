@@ -33,7 +33,12 @@
                 <p>{{ proj.description }}</p>
                 <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <br><br><br><br><br><br>
-                <div id="{{ proj.tag_name }}_tag" class="tag-list"></div>
+                <div id="{{ proj.tag_name }}_tag" class="tag-list">
+                Skills:
+                {% for skill in proj.skills_list.all %}
+                {{ skill.name }} |
+                {% endfor %}</div>
+
                 
 
             
