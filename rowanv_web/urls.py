@@ -28,4 +28,7 @@ urlpatterns = [
     #url(r'^portfolio/windchill/', TemplateView.as_view(template_name='visualizations/windchill_table.html')),
     url(r'^portfolio/windchill/', views.windchill, name='windchill'),
     url(r'^portfolio/oecd_unemployment/', views.oecd_unemployment, name='oecd_unemployment'),
+    url(r'^portfolio/about/', views.about, name='about'),
+    url(r'^portfolio/contact/', views.contact, name='contact'),
+    url(r'^portfolio/skills/', views.skills, name='skills'),
 ]

@@ -10,6 +10,18 @@ def portfolio(request):
 	return render(request, 'portfolio.html', {'projects_list': Project.objects.all(), 
 		'all_skills_list': [o.name for o in Skill.objects.all()]})
 
+def about(request):
+	return render(request, 'about.html')
+
+def skills(request):
+	return render(request, 'skills.html')
+
+def contact(request):
+	return render(request, 'contact.html')
+
+
+## Visualization Views ######
+
 def windchill(request):
 	with open('portfolio/templates/visualizations/windchill_table.html') as myfile:
 		data = "\n".join(line for line in myfile)
@@ -19,3 +31,4 @@ def oecd_unemployment(request):
 	with open('portfolio/templates/visualizations/oecd_unemployment.html') as myfile:
 		data = "\n".join(line for line in myfile)
 	return HttpResponse(data)
+

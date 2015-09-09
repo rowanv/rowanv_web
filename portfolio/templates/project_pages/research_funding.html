@@ -1,0 +1,20 @@
+I explore the following research question: "What determines the levels of
+	funding that an NSF or NASA-funded project receives?". I created a binary dependent 
+	variable that indicated whether the research project had received high levels of 
+	research funding. I defined high levels of research funding as the upper decile for 
+	the original, raw funding variable.\n'
+	I then utilized text analytics to determine the words in the abstract that were correlated
+	with high levels of funding. I utilized logit, CART, and Random Forest models. The initial 
+	iterations of all three models showed similar levels of accuracy, with an improvement of 
+	around 17% over the baseline. Ultimately, I chose to proceed with cross-validation with 
+	the logit and CART models -- while the Random Forest model performed a few fractions of a 
+	percentage point better than the CART model, it took substantially longer to train.\n'
+	
+	After proceeding with cross-validation process, I found the logit model predicted whether 
+	a research project was likely to have received high levels of funding with around 89% accuracy 
+	on the testing sets, while the CART model predicted whether a research project was likely to 
+	have received high levels of funding with around 90% accuracy.\n'
+
+	Overall, I find the models provide a significant improvement over the baseline in predicting 
+	whether a research project is likely to be funded based solely on textual analysis of the 
+	abstract. I then repeated the analysis for other years in order to compare trends over time.
