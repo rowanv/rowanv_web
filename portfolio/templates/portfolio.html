@@ -3,6 +3,10 @@
 {% block content %}
 
 
+
+
+
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
@@ -28,13 +32,24 @@
                 <h4>Python, Pandas library, Bokeh library</h4>
                 <p>{{ proj.description }}</p>
                 <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <br><br><br><br><br><br>
+                <div id="{{ proj.tag_name }}_tag" class="tag-list"></div>
+                
+
+            
+
+
             </div>
         </div>
+
+
+
+        <hr>
             {% endfor %}
         {% endif %}
 
 
-        <hr>
+        
 
 
         <!-- Pagination -->
@@ -78,5 +93,8 @@
             </div>
             <!-- /.row -->
         </footer>
+
+        <!-- Tags -->
+        
         
 {% endblock %}

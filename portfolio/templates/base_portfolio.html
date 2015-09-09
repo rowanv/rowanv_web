@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="/static/css/1-col-portfolio.css" rel="stylesheet">
+    <link href='/static/css/bootstrap-tags.css' rel='stylesheet'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,6 +75,23 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/static/js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript -->
+    {% if projects_list %}
+            {% for proj in projects_list %}
+            <script src='/static/js/bootstrap-tags.min.js'></script>
+            <script>
+                $(function() {
+                    // If using Bootstrap 2, be sure to include:
+                    // Tags.bootstrapVersion = "2";
+                    $('#{{ proj.tag_name }}_tag').tags({
+                        readOnly: true,
+                        tagData:['R', 'Python'],
+                    });
+                });
+            </script>
+            {% endfor %}
+    {% endif %}
 
 </body>
 
