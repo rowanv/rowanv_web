@@ -20,6 +20,14 @@ class NewVisitorTest(unittest.TestCase):
         #see that the title mentiosn portfolio
         self.assertIn('Portfolio', self.browser.title)
 
-        self.fail('Finish the test')
 
-        print('hi')
+
+    def test_layout_and_styling(self):
+        self.browser.get('http://localhost:8000/portfolio/')
+        self.browser.set_window_size(1024, 768)
+        
+        #there is a nav bar at the top
+        navbar = self.browser.find_element_by_tag_name('nav') 
+
+        #and it is black-ish grey!
+        self.assertEqual(navbar.value_of_css_property('color'), 'rgba(51, 51, 51, 1)')
