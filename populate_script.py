@@ -1,4 +1,42 @@
-from portfolio.models import Project
+from portfolio.models import Skill, Project
+
+
+r_skill = Skill(name='R')
+r_skill.save()
+
+python_skill = Skill(name='Python')
+python_skill.save()
+
+pandas_library_skill = Skill(name='Pandas Library')
+pandas_library_skill.save()
+
+bokeh_library_skill = Skill(name='Bokeh Library')
+bokeh_library_skill.save()
+
+numpy_library_skill = Skill(name='Numpy Library')
+numpy_library_skill.save()
+
+bash_skill = Skill(name='Bash')
+bash_skill.save()
+
+pig_skill = Skill(name='Pig')
+pig_skill.save()
+
+machine_learning_skill = Skill(name='Machine Learning')
+machine_learning_skill.save()
+
+ggplot2_library_skill = Skill(name='ggplot2 Library')
+ggplot2_library_skill.save()
+
+tableau_skill = Skill(name='Tableau')
+tableau_skill.save()
+
+map_reduce_skill = Skill(name='Map Reduce')
+map_reduce_skill.save()
+
+hadoop_skill = Skill(name='Hadoop')
+hadoop_skill.save()
+
 
 
 oecd_project = Project(title='OECD Unemployment Visualization',
@@ -6,7 +44,8 @@ oecd_project = Project(title='OECD Unemployment Visualization',
 	link='/portfolio/oecd_unemployment/',
 	thumbnail='/static/images/oecd_unemployment_pic.png',
 	tag_name = 'oecd')
-oecd_tags = ['Python', 'Pandas library', 'Bokeh library']
+oecd_project.save()
+oecd_project.skills_list.add(r_skill, pandas_library_skill, bokeh_library_skill)
 oecd_project.save()
 
 windchill_project = Project(title='Windchill Visualization',
@@ -14,7 +53,8 @@ windchill_project = Project(title='Windchill Visualization',
 	link='/portfolio/windchill/',
 	thumbnail='/static/images/windchill_pic.png',
 	tag_name='windchill')
-windchill_tags = ['Python', 'Pandas library', 'Numpy library', 'Bokeh library']
+windchill_project.save()
+windchill_project.skills_list.add(python_skill, pandas_library_skill, bokeh_library_skill, numpy_library_skill)
 windchill_project.save()
 
 electronegativity_project = Project(title='Electronegativity Table',
@@ -22,7 +62,8 @@ electronegativity_project = Project(title='Electronegativity Table',
 	link='/portfolio/electronegativity/',
 	thumbnail='/static/images/electronegativity_pic.png',
 	tag_name='electronegativity')
-electronegativity_tags = ['Python', 'Bokeh library']
+electronegativity_project.save()
+electronegativity_project.skills_list.add(python_skill, bokeh_library_skill)
 electronegativity_project.save()
 
 geo_twitter_project = Project(title='Geo-Based Offline Sales Research',
@@ -31,14 +72,16 @@ geo_twitter_project = Project(title='Geo-Based Offline Sales Research',
 	'Presented at QCon and Grace Hopper.',
 	link='portfolio/geo_twitter/',
 	tag_name='geo_twitter')
-geo_twitter_project_tags = ['Python', 'R', 'Pandas library', 'Bash', 'Pig']
+geo_twitter_project.save()
+geo_twitter_project.skills_list.add(python_skill, r_skill, pandas_library_skill, bash_skill, pig_skill, hadoop_skill)
 geo_twitter_project.save()
 
 linear_regression_project = Project(title='Linear Regression Example',
 	description = 'A simple, dynamic data visualization using Python\'s Pandas and Bokeh libraries.',
 	link='portfolio/linear_regression/',
 	tag_name='linear_regression')
-linear_regression_tags = ['Python', 'Bokeh library']
+linear_regression_project.save()
+linear_regression_project.skills_list.add(python_skill, bokeh_library_skill)
 linear_regression_project.save()
 
 research_funding_project = Project(title='Research Funding Predictions Project',
@@ -64,7 +107,8 @@ research_funding_project = Project(title='Research Funding Predictions Project',
 	'abstract. I then repeated the analysis for other years in order to compare trends over time.',
 	link='portfolio/research_funding/',
 	tag_name='research_funding')
-research_funding_tags = ['R', 'Machine Learning', 'ggplot2 Library']
+research_funding_project.save()
+research_funding_project.skills_list.add(r_skill, machine_learning_skill, ggplot2_library_skill)
 research_funding_project.save()
 
 #https://github.com/rowanv/pred-res-fund
@@ -77,7 +121,9 @@ inclusion_with_identity_project = Project(title='Inclusion with Identity Dashboa
 	'database that populated the dashboard.',
 	link='portfolio/inclusion_with_identity/',
 	tag_name='inclusion_with_identity')
-inclusion_with_identity_tags = ['R', 'Tableau']
+inclusion_with_identity_project.save()
+inclusion_with_identity_project.skills_list.add(r_skill, tableau_skill)
+inclusion_with_identity_project.save()
 
 energy_industry_prediction_project = Project(title='Energy Industry Development Prediction',
 	description = 'Used R to predict the development of the energy industry using'
@@ -85,7 +131,8 @@ energy_industry_prediction_project = Project(title='Energy Industry Development 
 	'saturation point.',
 	link='porfolio/energy_industry_prediction/',
 	tag_name='energy_industry_prediction')
-energy_industry_prediction_tags = ['R', 'ggplot2 Library']
+energy_industry_prediction_project.save()
+energy_industry_prediction_project.skills_list.add(r_skill, ggplot2_library_skill)
 energy_industry_prediction_project.save()
 
 social_media_dashboard_project = Project(title='Social Media Dashboard',
@@ -93,7 +140,8 @@ social_media_dashboard_project = Project(title='Social Media Dashboard',
 	'tracks a Twitter account\'s key use statistics.',
 	link='porfolio/social_media_dashboard/',
 	tag_name='social_media_dashboard')
-social_media_dashboard_tags = ['Python', 'Bokeh library', 'Pandas library']
+social_media_dashboard_project.save()
+social_media_dashboard_project.skills_list.add(python_skill, bokeh_library_skill, pandas_library_skill)
 social_media_dashboard_project.save()
 
 ith_degree_search_project = Project(title='Big Data Ith Degree Connections Finder',
@@ -103,7 +151,8 @@ ith_degree_search_project = Project(title='Big Data Ith Degree Connections Finde
 	'of connections.',
 	link='porfolio/ith_degree_search/',
 	tag_name='ith_degree_search',)
-ith_degree_search_tags = ['Pig', 'Bash', 'Map Reduce']
+ith_degree_search_project.save()
+ith_degree_search_project.skills_list.add(pig_skill, bash_skill, map_reduce_skill, hadoop_skill)
 ith_degree_search_project.save()
 
 
