@@ -1,10 +1,24 @@
-from django.test import LiveServerTestCase
+import sys
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import unittest
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        for arg in sys.argv:
+            if 'liveserver' in arg:
+                cls.server_url = 'http://' + arg.split('=')[1]
+                return
+        super().setUpClass()
+        cls.server_url = cls.live_server_url
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.server_url == cls.live_server_url:
+            super().tearDownClass()
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -15,7 +29,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_view_a_portfolio_entry(self):
         # Come to check out portfolio home page
-        self.browser.get('http://localhost:8000/portfolio/')
+        self.browser.get(self.server_url + '/portfolio/')
 
         #see that the title mentiosn portfolio
         self.assertIn('Portfolio', self.browser.title)
@@ -23,7 +37,7 @@ class NewVisitorTest(unittest.TestCase):
 
 
     def test_layout_and_styling(self):
-        self.browser.get('http://localhost:8000/portfolio/')
+        self.browser.get(self.server_url + '/portfolio/')
         self.browser.set_window_size(1024, 768)
         
         #there is a nav bar at the top
