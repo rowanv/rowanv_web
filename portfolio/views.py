@@ -44,3 +44,6 @@ def geo_twitter(request):
 def research_funding(request):
 	return render(request, 'project_pages/research_funding.html')
 
+
+
+

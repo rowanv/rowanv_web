@@ -30,6 +30,7 @@
             <div class="col-md-5">
                 <h3>{{ proj.title }}</h3>
                 <br>
+                <h4></h4>
                 <p>{{ proj.description }}</p>
                 <div id="{{ proj.tag_name }}_tag" class="tag-list">
 
@@ -41,9 +42,9 @@
 
 
                 <br>
-                </div>
+
                 <div>
-                    <div style='float:right;padding-right:35px;'>
+                    <div style='float:right;padding-right:35px'>
                     <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
 
@@ -53,23 +54,14 @@
                     <a href='{{ proj.code_link }}'>
                         <img src='/static/images/github_icon.ico'>
                     </a>
+                    </div>
                     {% endif %}
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
         </div>
 
-
-
         <hr>
+        <br>
             {% endfor %}
         {% endif %}
 
@@ -87,6 +79,7 @@
                     <li class="active">
                         <a href="#">1</a>
                     </li>
+                    <!--
                     <li>
                         <a href="#">2</a>
                     </li>
@@ -99,6 +92,7 @@
                     <li>
                         <a href="#">5</a>
                     </li>
+                -->
                     <li>
                         <a href="#">&raquo;</a>
                     </li>
