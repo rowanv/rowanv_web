@@ -23,27 +23,45 @@
          <div class="row">
             <div class="col-md-7">
                 <a href="{{ proj.link }}">
-                    <img class="img-responsive" src="{{ proj.thumbnail }}" alt="oecd unemployment pic"> 
+                    <img class="img-responsive" src="{{ proj.thumbnail }}" alt="oecd unemployment pic">
                     <!--img class="img-responsive" src="" alt="oecd unemployment pic"-->
                 </a>
             </div>
             <div class="col-md-5">
                 <h3>{{ proj.title }}</h3>
-                <h4>Python, Pandas library, Bokeh library</h4>
+                <br>
                 <p>{{ proj.description }}</p>
                 <div id="{{ proj.tag_name }}_tag" class="tag-list">
-                Skills:
-                {% for skill in proj.skills_list.all %}
-                {{ skill.name }} |
-                {% endfor %}</div>
+
+                    Skills:
+                    {% for skill in proj.skills_list.all %}
+                    {{ skill.name }} |
+                    {% endfor %}
+                </div>
+
+
                 <br>
-                <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-                
-                
+                </div>
+                <div>
+                    <div style='float:left;'>
+                    <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
 
-                
+                    {% if proj.code_link %}
+                    <div id='{{ proj.tag_name }}_code' style='float:right;padding-right:25px;' >
+                    Code :
+                    <a href='{{ proj.code_link }}'>
+                        <img src='/static/images/github_icon.ico'>
+                    </a>
+                    {% endif %}
+                </div>
 
-            
+
+
+
+
+
+
 
 
             </div>
@@ -56,7 +74,7 @@
         {% endif %}
 
 
-        
+
 
 
         <!-- Pagination -->
@@ -102,6 +120,6 @@
         </footer>
 
         <!-- Tags -->
-        
-        
+
+
 {% endblock %}

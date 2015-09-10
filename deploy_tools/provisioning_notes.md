@@ -34,3 +34,6 @@ Assume we have a user account at /home/username
          ├── source
          ├── static
          └── virtualenv
+
+# Populate the database
+python3 manage.py shell < populate_script.py

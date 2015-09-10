@@ -43,7 +43,8 @@ oecd_project = Project(title='OECD Unemployment Visualization',
 	description='A dynamic visualization of the unemployment rates in OECD countries over the past 15 years.',
 	link='/portfolio/oecd_unemployment/',
 	thumbnail='/static/images/oecd_unemployment_pic.png',
-	tag_name = 'oecd')
+	tag_name = 'oecd',
+	code_link = 'https://github.com/rowanv/giraffe_viz/blob/master/oecd_unemployment.py')
 oecd_project.save()
 oecd_project.skills_list.add(r_skill, pandas_library_skill, bokeh_library_skill)
 oecd_project.save()
@@ -52,7 +53,8 @@ windchill_project = Project(title='Windchill Visualization',
 	description='A dynamic, visual representation of the Siple windchill formula.',
 	link='/portfolio/windchill/',
 	thumbnail='/static/images/windchill_pic.png',
-	tag_name='windchill')
+	tag_name='windchill',
+	code_link='https://github.com/rowanv/giraffe_viz/blob/master/windchill.py')
 windchill_project.save()
 windchill_project.skills_list.add(python_skill, pandas_library_skill, bokeh_library_skill, numpy_library_skill)
 windchill_project.save()
@@ -64,7 +66,8 @@ ith_degree_search_project = Project(title='Big Data Ith Degree Connections Finde
 	'of connections.',
 	thumbnail='/static/images/ith_degree_search_pic.png',
 	link='porfolio/ith_degree_search/',
-	tag_name='ith_degree_search',)
+	tag_name='ith_degree_search',
+	code_link='https://github.com/rowanv/ith_degree_search')
 ith_degree_search_project.save()
 ith_degree_search_project.skills_list.add(pig_skill, bash_skill, map_reduce_skill, hadoop_skill)
 ith_degree_search_project.save()
@@ -73,7 +76,8 @@ electronegativity_project = Project(title='Electronegativity Table',
 	description='A dynamic representation of Periodic Table electronegativities.',
 	link='/portfolio/electronegativity/',
 	thumbnail='/static/images/electronegativity_pic.png',
-	tag_name='electronegativity')
+	tag_name='electronegativity',
+	code_link='https://github.com/rowanv/data-science/blob/master/Visualizations/electronegativity_table.py')
 electronegativity_project.save()
 electronegativity_project.skills_list.add(python_skill, bokeh_library_skill)
 electronegativity_project.save()
@@ -100,7 +104,7 @@ linear_regression_project.save()
 
 research_funding_project = Project(title='Research Funding Predictions Project',
 	description='I explore the following research question: "What determines the levels of'
-	'funding that an NSF or NASA-funded project receives?".  I define high levels of research' 
+	'funding that an NSF or NASA-funded project receives?".  I define high levels of research'
 	'funding as the upper decile for the original, raw funding variable. I then use text '
 	'analytics to determine the words in the abstract that were correlated'
 	'with high levels of funding. Using CART, logistic regression, and Random Forest models,'
@@ -123,7 +127,8 @@ energy_industry_prediction_project = Project(title='Energy Industry Development 
 	'saturation point.',
 	link='porfolio/energy_industry_prediction/',
 	thumbnail='/static/images/abstract_green.png',
-	tag_name='energy_industry_prediction')
+	tag_name='energy_industry_prediction',
+	code_link='https://github.com/rowanv/pred-res-fund')
 energy_industry_prediction_project.save()
 energy_industry_prediction_project.skills_list.add(r_skill, ggplot2_library_skill)
 energy_industry_prediction_project.save()

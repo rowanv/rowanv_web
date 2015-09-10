@@ -20,6 +20,7 @@ class Project(models.Model):
 	thumbnail = models.ImageField(default='http://placehold.it/700x300')
 	tag_name = models.CharField(max_length=100)
 	skills_list = models.ManyToManyField(Skill)
+	code_link = models.CharField(max_length=200, null=True)
 
 	def __str__(self):
 		return self.title
