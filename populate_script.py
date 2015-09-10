@@ -65,7 +65,7 @@ ith_degree_search_project = Project(title='Big Data Ith Degree Connections Finde
 	'to create Map Reduce jobs that allow for scaling to a very large number '
 	'of connections.',
 	thumbnail='/static/images/ith_degree_search_pic.png',
-	link='porfolio/ith_degree_search/',
+	link='https://github.com/rowanv/ith_degree_search',
 	tag_name='ith_degree_search',
 	code_link='https://github.com/rowanv/ith_degree_search')
 ith_degree_search_project.save()
@@ -86,7 +86,7 @@ geo_twitter_project = Project(title='Geo-Based Offline Sales Research',
 	description='Project undertaken at Twitter to determine the offline '
 	'sales impact of social networking platforms using a Geo-Based Methodology. '
 	'Presented at QCon and Grace Hopper.',
-	link='portfolio/geo_twitter/',
+	link='/portfolio/geo_twitter/',
 	thumbnail='/static/images/abstract_green.png',
 	tag_name='geo_twitter')
 geo_twitter_project.save()
@@ -95,7 +95,7 @@ geo_twitter_project.save()
 
 linear_regression_project = Project(title='Linear Regression Example',
 	description = 'A simple, dynamic data visualization using Python\'s Pandas and Bokeh libraries.',
-	link='portfolio/linear_regression/',
+	link='/portfolio/linear_regression/',
 	thumbnail='/static/images/linear_regression_pic.png',
 	tag_name='linear_regression')
 linear_regression_project.save()
@@ -110,9 +110,10 @@ research_funding_project = Project(title='Research Funding Predictions Project',
 	'with high levels of funding. Using CART, logistic regression, and Random Forest models,'
 	'I am able to predict whether a research project is likely to have received high levels of funding'
 	'with around 90% accuracy.',
-	link='portfolio/research_funding/',
+	link='https://github.com/rowanv/pred-res-fund',
 	thumbnail='/static/images/research_funding_pic.png',
-	tag_name='research_funding')
+	tag_name='research_funding',
+	code_link='https://github.com/rowanv/pred-res-fund')
 research_funding_project.save()
 research_funding_project.skills_list.add(r_skill, machine_learning_skill, ggplot2_library_skill)
 research_funding_project.save()
@@ -127,8 +128,8 @@ energy_industry_prediction_project = Project(title='Energy Industry Development 
 	'saturation point.',
 	link='porfolio/energy_industry_prediction/',
 	thumbnail='/static/images/abstract_green.png',
-	tag_name='energy_industry_prediction',
-	code_link='https://github.com/rowanv/pred-res-fund')
+	tag_name='energy_industry_prediction'
+	)
 energy_industry_prediction_project.save()
 energy_industry_prediction_project.skills_list.add(r_skill, ggplot2_library_skill)
 energy_industry_prediction_project.save()

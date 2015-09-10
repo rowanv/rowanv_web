@@ -7,7 +7,7 @@ from portfolio.models import Project, Skill
 
 
 def portfolio(request):
-	return render(request, 'portfolio.html', {'projects_list': Project.objects.all(), 
+	return render(request, 'portfolio.html', {'projects_list': Project.objects.all(),
 		'all_skills_list': [o.name for o in Skill.objects.all()]})
 
 def about(request):
@@ -31,4 +31,16 @@ def oecd_unemployment(request):
 	with open('portfolio/templates/visualizations/oecd_unemployment.html') as myfile:
 		data = "\n".join(line for line in myfile)
 	return HttpResponse(data)
+
+def electronegativity(request):
+	with open('portfolio/templates/visualizations/electronegativity_table.html') as myfile:
+		data = "\n".join(line for line in myfile)
+	return HttpResponse(data)
+
+## Project Views #######
+def geo_twitter(request):
+	return render(request, 'project_pages/geo_twitter.html')
+
+def research_funding(request):
+	return render(request, 'project_pages/research_funding.html')
 

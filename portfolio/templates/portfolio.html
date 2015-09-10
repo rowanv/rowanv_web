@@ -43,12 +43,12 @@
                 <br>
                 </div>
                 <div>
-                    <div style='float:left;'>
+                    <div style='float:right;padding-right:35px;'>
                     <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
 
                     {% if proj.code_link %}
-                    <div id='{{ proj.tag_name }}_code' style='float:right;padding-right:25px;' >
+                    <div id='{{ proj.tag_name }}_code' style='float:left;padding-left:25px;' >
                     Code :
                     <a href='{{ proj.code_link }}'>
                         <img src='/static/images/github_icon.ico'>

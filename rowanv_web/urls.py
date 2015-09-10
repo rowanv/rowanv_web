@@ -31,4 +31,7 @@ urlpatterns = [
     url(r'^portfolio/about/', views.about, name='about'),
     url(r'^portfolio/contact/', views.contact, name='contact'),
     url(r'^portfolio/skills/', views.skills, name='skills'),
+    url(r'^portfolio/electronegativity/', views.electronegativity, name='electronegativity'),
+    url(r'^portfolio/geo_twitter/', views.geo_twitter, name='geo_twitter'),
+    url(r'^portfolio/research_funding/', views.research_funding, name='research_funding'),
 ]
