@@ -63,4 +63,4 @@ sudo start gunicorn-rowanv.com
 ../virtualenv/bin/python3 manage.py flush
 ../virtualenv/bin/python3 manage.py shell < populate_script.py
 
-## TODO: Small issue where have to set to debug mode for now, will fix
+
