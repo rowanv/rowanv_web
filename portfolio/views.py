@@ -28,9 +28,7 @@ def windchill(request):
 	return HttpResponse(data)
 
 def oecd_unemployment(request):
-	with open('portfolio/templates/visualizations/oecd_unemployment.html') as myfile:
-		data = "\n".join(line for line in myfile)
-	return HttpResponse(data)
+	return render(request, 'visualizations/oecd_unemployment.html')
 
 def electronegativity(request):
 	with open('portfolio/templates/visualizations/electronegativity_table.html') as myfile:
