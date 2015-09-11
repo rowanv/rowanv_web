@@ -35,5 +35,32 @@ Assume we have a user account at /home/username
          ├── static
          └── virtualenv
 
-# Populate the database
-python3 manage.py shell < populate_script.py
+# Automated deploy
+## on my machine
+
+
+fab deploy --host=rowan@rowanv.com
+
+## Then on the actual server
+
+sed "s/SITENAME/rowanv.com/g" \
+    deploy_tools/nginx.template.conf | sudo tee \
+    /etc/nginx/sites-available/rowanv.com
+
+ sudo ln -s ../sites-available/rowanv.com \
+    /etc/nginx/sites-enabled/rowanv.com
+
+sed "s/SITENAME/rowanv.com/g" \
+    deploy_tools/gunicorn-upstart.template.conf | sudo tee \
+    /etc/init/gunicorn-rowanv.com.conf
+
+sudo service nginx reload
+sudo start gunicorn-rowanv.com
+# or sudo restart gunicorn-rowanv.com
+
+../virtualenv/bin/python3 manage.py makemigrations
+../virtualenv/bin/python3 manage.py migrate
+../virtualenv/bin/python3 manage.py flush
+../virtualenv/bin/python3 manage.py shell < populate_script.py
+
+## TODO: Small issue where have to set to debug mode for now, will fix
