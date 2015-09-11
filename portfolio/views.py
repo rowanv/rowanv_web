@@ -29,9 +29,7 @@ def oecd_unemployment(request):
 	return render(request, 'visualizations/oecd_unemployment.html')
 
 def electronegativity(request):
-	with open('portfolio/templates/visualizations/electronegativity_table.html') as myfile:
-		data = "\n".join(line for line in myfile)
-	return HttpResponse(data)
+	return render(request, 'visualizations/electronegativity_table.html')
 
 ## Project Views #######
 def geo_twitter(request):
