@@ -24,6 +24,7 @@ static = os.path.join( os.path.dirname(__file__), 'static' )
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', views.portfolio, name='portfolio'),
     url(r'^portfolio/$', views.portfolio, name='portfolio'),
     #url(r'^portfolio/windchill/', TemplateView.as_view(template_name='visualizations/windchill_table.html')),
     url(r'^portfolio/windchill/', views.windchill, name='windchill'),

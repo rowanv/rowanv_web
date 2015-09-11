@@ -23,9 +23,7 @@ def contact(request):
 ## Visualization Views ######
 
 def windchill(request):
-	with open('portfolio/templates/visualizations/windchill_table.html') as myfile:
-		data = "\n".join(line for line in myfile)
-	return HttpResponse(data)
+	return render(request, 'visualizations/windchill_table.html')
 
 def oecd_unemployment(request):
 	return render(request, 'visualizations/oecd_unemployment.html')
