@@ -31,12 +31,17 @@ def oecd_unemployment(request):
 def electronegativity(request):
 	return render(request, 'visualizations/electronegativity_table.html')
 
+def housing_prices(request):
+	return render(request, 'visualizations/housing_prices.html')
+
 ## Project Views #######
 def geo_twitter(request):
 	return render(request, 'project_pages/geo_twitter.html')
 
 def research_funding(request):
 	return render(request, 'project_pages/research_funding.html')
+
+
 
 
 

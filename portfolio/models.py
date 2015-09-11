@@ -16,7 +16,8 @@ class Project(models.Model):
 	description = models.CharField(max_length=400)
 	current_project = models.BooleanField(default=False)
 	date_undertaken = models.DateField(default=timezone.now)
-	link = models.CharField(max_length = 200)
+	link = models.CharField(max_length = 200,
+		default='https://www.linkedin.com/in/rowanv')
 	thumbnail = models.ImageField(default='http://placehold.it/700x300')
 	tag_name = models.CharField(max_length=100)
 	skills_list = models.ManyToManyField(Skill)

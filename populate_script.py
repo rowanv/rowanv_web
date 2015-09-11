@@ -22,6 +22,12 @@ bash_skill.save()
 pig_skill = Skill(name='Pig')
 pig_skill.save()
 
+data_science_skill = Skill(name='Data Science')
+data_science_skill.save()
+
+statistics_skill = Skill(name='Statistics')
+statistics_skill.save()
+
 machine_learning_skill = Skill(name='Machine Learning')
 machine_learning_skill.save()
 
@@ -90,17 +96,20 @@ geo_twitter_project = Project(title='Geo-Based Offline Sales Research',
 	thumbnail='/static/images/abstract_green.png',
 	tag_name='geo_twitter')
 geo_twitter_project.save()
-geo_twitter_project.skills_list.add(python_skill, r_skill, pandas_library_skill, bash_skill, pig_skill, hadoop_skill)
+geo_twitter_project.skills_list.add(python_skill, r_skill, pandas_library_skill,
+	bash_skill, pig_skill, hadoop_skill, data_science_skill, statistics_skill)
 geo_twitter_project.save()
 
-linear_regression_project = Project(title='Linear Regression Example',
+housing_prices_project = Project(title='Linear Regression Example',
 	description = 'A simple, dynamic data visualization using Python\'s Pandas and Bokeh libraries.',
-	link='/portfolio/linear_regression/',
+	link='/portfolio/housing_prices/',
 	thumbnail='/static/images/linear_regression_pic.png',
-	tag_name='linear_regression')
-linear_regression_project.save()
-linear_regression_project.skills_list.add(python_skill, bokeh_library_skill)
-linear_regression_project.save()
+	tag_name='housing_prices',
+	code_link='https://github.com/rowanv/giraffe_viz/blob/master/housing_prices.py')
+housing_prices_project.save()
+housing_prices_project.skills_list.add(python_skill, bokeh_library_skill,
+	statistics_skill)
+housing_prices_project.save()
 
 research_funding_project = Project(title='Research Funding Predictions Project',
 	description='I explore the following research question: "What determines the levels of'
@@ -115,7 +124,8 @@ research_funding_project = Project(title='Research Funding Predictions Project',
 	tag_name='research_funding',
 	code_link='https://github.com/rowanv/pred-res-fund')
 research_funding_project.save()
-research_funding_project.skills_list.add(r_skill, machine_learning_skill, ggplot2_library_skill)
+research_funding_project.skills_list.add(r_skill, machine_learning_skill,
+	ggplot2_library_skill, data_science_skill, statistics_skill)
 research_funding_project.save()
 
 #https://github.com/rowanv/pred-res-fund
@@ -126,12 +136,13 @@ energy_industry_prediction_project = Project(title='Energy Industry Development 
 	description = 'Used R to predict the development of the energy industry using'
 	'a patent dataset. Determined whether certain technologies had reached a '
 	'saturation point.',
-	link='porfolio/energy_industry_prediction/',
+	#link='porfolio/energy_industry_prediction/',
 	thumbnail='/static/images/abstract_green.png',
 	tag_name='energy_industry_prediction'
 	)
 energy_industry_prediction_project.save()
-energy_industry_prediction_project.skills_list.add(r_skill, ggplot2_library_skill)
+energy_industry_prediction_project.skills_list.add(r_skill,
+	ggplot2_library_skill, data_science_skill, statistics_skill, machine_learning_skill)
 energy_industry_prediction_project.save()
 
 inclusion_with_identity_project = Project(title='Inclusion with Identity Dashboard',
@@ -139,21 +150,22 @@ inclusion_with_identity_project = Project(title='Inclusion with Identity Dashboa
 	'Development Bank that visualized development indicators across various races'
 	'and ethnicities in Latin America. Scraped national census data to create'
 	'database that populated the dashboard.',
-	link='portfolio/inclusion_with_identity/',
+	#link='portfolio/inclusion_with_identity/',
 	thumbnail='/static/images/inclusion_with_identity_pic.png',
 	tag_name='inclusion_with_identity')
 inclusion_with_identity_project.save()
-inclusion_with_identity_project.skills_list.add(r_skill, tableau_skill)
+inclusion_with_identity_project.skills_list.add(r_skill, tableau_skill, data_science_skill)
 inclusion_with_identity_project.save()
 
 social_media_dashboard_project = Project(title='Social Media Dashboard',
 	description = 'Created a real-time, dynamically updating social media dashboard that '
 	'tracks a Twitter account\'s key use statistics.',
-	link='porfolio/social_media_dashboard/',
+	#link='porfolio/social_media_dashboard/',
 	thumbnail='/static/images/abstract_green.png',
 	tag_name='social_media_dashboard')
 social_media_dashboard_project.save()
-social_media_dashboard_project.skills_list.add(python_skill, bokeh_library_skill, pandas_library_skill)
+social_media_dashboard_project.skills_list.add(python_skill, bokeh_library_skill,
+	pandas_library_skill, data_science_skill)
 social_media_dashboard_project.save()
 
 
