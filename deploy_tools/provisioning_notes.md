@@ -41,7 +41,7 @@ Assume we have a user account at /home/username
 
 fab deploy --host=rowan@rowanv.com
 
-## Then on the actual server
+## Then on the actual server, within source for the website
 
 sed "s/SITENAME/rowanv.com/g" \
     deploy_tools/nginx.template.conf | sudo tee \
