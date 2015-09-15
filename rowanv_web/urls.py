@@ -36,4 +36,9 @@ urlpatterns = [
     url(r'^portfolio/geo_twitter/', views.geo_twitter, name='geo_twitter'),
     url(r'^portfolio/research_funding/', views.research_funding, name='research_funding'),
     url(r'^portfolio/housing_prices/', views.housing_prices, name='housing_prices'),
+    url(r'^portfolio/gender_olympics/', views.gender_olympics, name='gender_olympics'),
+    url(r'^portfolio/gender_olympics_ipython/', views.gender_olympics_ipython,
+        name='gender_olympics_ipython'),
+    url(r'^portfolio/gender_olympics_viz/', views.gender_olympics_viz,
+        name='gender_olympics_viz'),
 ]
