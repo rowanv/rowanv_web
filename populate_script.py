@@ -43,6 +43,15 @@ map_reduce_skill.save()
 hadoop_skill = Skill(name='Hadoop')
 hadoop_skill.save()
 
+java_script_skill = Skill(name='JavaScript')
+java_script_skill.save()
+
+d3_library_skill = Skill(name='d3 Library')
+d3_library_skill.save()
+
+matplotlib_library_skill = Skill(name='matplotlib Library')
+matplotlib_library_skill.save()
+
 
 
 oecd_project = Project(title='OECD Unemployment Visualization',
@@ -52,8 +61,20 @@ oecd_project = Project(title='OECD Unemployment Visualization',
 	tag_name = 'oecd',
 	code_link = 'https://github.com/rowanv/giraffe_viz/blob/master/oecd_unemployment.py')
 oecd_project.save()
-oecd_project.skills_list.add(r_skill, pandas_library_skill, bokeh_library_skill)
+oecd_project.skills_list.add(python_skill, pandas_library_skill, bokeh_library_skill)
 oecd_project.save()
+
+gender_olympics_project = Project(title='Gender and the Olympics Visualization',
+	description='A dynamic visualization of the medal count for the Olympic Games'
+	' by gender over time.',
+	link='/portfolio/gender_olympics/',
+	thumbnail='/static/images/gender_olympics_pic.png',
+	tag_name='gender_olympics',
+	code_link='https://github.com/rowanv/giraffe_viz/blob/master/olympics/olympics_medal_line_graph_viz.html')
+gender_olympics_project.save()
+gender_olympics_project.skills_list.add(java_script_skill, d3_library_skill,
+	python_skill, pandas_library_skill, matplotlib_library_skill)
+
 
 windchill_project = Project(title='Windchill Visualization',
 	description='A dynamic, visual representation of the Siple windchill formula.',

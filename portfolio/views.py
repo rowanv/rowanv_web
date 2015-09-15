@@ -34,12 +34,22 @@ def electronegativity(request):
 def housing_prices(request):
 	return render(request, 'visualizations/housing_prices.html')
 
+def gender_olympics_viz(request):
+	return render(request, 'visualizations/gender_olympics_viz.html')
+
 ## Project Views #######
 def geo_twitter(request):
 	return render(request, 'project_pages/geo_twitter.html')
 
 def research_funding(request):
 	return render(request, 'project_pages/research_funding.html')
+
+def gender_olympics(request):
+
+	return render(request, 'project_pages/gender_olympics.html')
+
+def gender_olympics_ipython(request):
+	return render(request, 'project_pages/Olympic Medal Count Bar Chart - Data Cleaning.html')
 
 
 
