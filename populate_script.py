@@ -52,6 +52,9 @@ d3_library_skill.save()
 matplotlib_library_skill = Skill(name='matplotlib Library')
 matplotlib_library_skill.save()
 
+geo_map_skill = Skill(name='Geomaps')
+geo_map_skill.save()
+
 
 
 oecd_project = Project(title='OECD Unemployment Visualization',
@@ -118,10 +121,22 @@ geo_twitter_project = Project(title='Geo-Based Offline Sales Research',
 	tag_name='geo_twitter')
 geo_twitter_project.save()
 geo_twitter_project.skills_list.add(python_skill, r_skill, pandas_library_skill,
-	bash_skill, pig_skill, hadoop_skill, data_science_skill, statistics_skill)
+	bash_skill, pig_skill, hadoop_skill, data_science_skill, statistics_skill,
+	geo_map_skill)
 geo_twitter_project.save()
 
-housing_prices_project = Project(title='Linear Regression Example',
+brazil_map_project = Project(title='Brazil Map',
+	description='A map of Brazil showing major cities, created using JavaScript\'s d3.js'
+	'library',
+	link='/portfolio/brazil_map/',
+	thumbnail='/static/images/brazil_map_pic.png',
+	tag_name='brazil_map',
+	code_link='https://github.com/rowanv/giraffe_viz/blob/master/mapping/brazil_map.html')
+brazil_map_project.save()
+brazil_map_project.skills_list.add(d3_library_skill, geo_map_skill)
+brazil_map_project.save()
+
+housing_prices_project = Project(title='Housing Prices Linear Regression',
 	description = 'A simple, dynamic data visualization using Python\'s Pandas and Bokeh libraries.',
 	link='/portfolio/housing_prices/',
 	thumbnail='/static/images/linear_regression_pic.png',
@@ -175,7 +190,8 @@ inclusion_with_identity_project = Project(title='Inclusion with Identity Dashboa
 	thumbnail='/static/images/inclusion_with_identity_pic.png',
 	tag_name='inclusion_with_identity')
 inclusion_with_identity_project.save()
-inclusion_with_identity_project.skills_list.add(r_skill, tableau_skill, data_science_skill)
+inclusion_with_identity_project.skills_list.add(r_skill, tableau_skill, data_science_skill,
+	geo_map_skill)
 inclusion_with_identity_project.save()
 
 social_media_dashboard_project = Project(title='Social Media Dashboard',

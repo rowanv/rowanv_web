@@ -37,6 +37,9 @@ def housing_prices(request):
 def gender_olympics_viz(request):
 	return render(request, 'visualizations/gender_olympics_viz.html')
 
+def brazil_map(request):
+	return render(request, 'visualizations/brazil_map.html')
+
 ## Project Views #######
 def geo_twitter(request):
 	return render(request, 'project_pages/geo_twitter.html')
