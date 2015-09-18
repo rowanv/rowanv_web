@@ -41,4 +41,5 @@ urlpatterns = [
         name='gender_olympics_ipython'),
     url(r'^portfolio/gender_olympics_viz/', views.gender_olympics_viz,
         name='gender_olympics_viz'),
+    url(r'^portfolio/brazil_map/', views.brazil_map, name='brazil_map'),
 ]
