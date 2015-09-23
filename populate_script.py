@@ -67,6 +67,18 @@ oecd_project.save()
 oecd_project.skills_list.add(python_skill, pandas_library_skill, bokeh_library_skill)
 oecd_project.save()
 
+voter_turnout_project = Project(title='Voter Turnout Visualization',
+	description='A dynamic visualization of presidential voter turnout by country'
+	' over time.',
+	link='/portfolio/voter_turnout/',
+	thumbnail='/static/images/voter_turnout_pic.png',
+	tag_name='voter_turnout',
+	code_link='https://github.com/rowanv/giraffe_viz/tree/master/voter_turnout')
+voter_turnout_project.save()
+voter_turnout_project.skills_list.add(java_script_skill, d3_library_skill, 
+	python_skill, pandas_library_skill, matplotlib_library_skill)
+voter_turnout_project.save()
+
 gender_olympics_project = Project(title='Gender and the Olympics Visualization',
 	description='A dynamic visualization of the medal count for the Olympic Games'
 	' by gender over time.',
@@ -77,17 +89,7 @@ gender_olympics_project = Project(title='Gender and the Olympics Visualization',
 gender_olympics_project.save()
 gender_olympics_project.skills_list.add(java_script_skill, d3_library_skill,
 	python_skill, pandas_library_skill, matplotlib_library_skill)
-
-
-windchill_project = Project(title='Windchill Visualization',
-	description='A dynamic, visual representation of the Siple windchill formula.',
-	link='/portfolio/windchill/',
-	thumbnail='/static/images/windchill_pic.png',
-	tag_name='windchill',
-	code_link='https://github.com/rowanv/giraffe_viz/blob/master/windchill.py')
-windchill_project.save()
-windchill_project.skills_list.add(python_skill, pandas_library_skill, bokeh_library_skill, numpy_library_skill)
-windchill_project.save()
+gender_olympics_project.save()
 
 ith_degree_search_project = Project(title='Big Data Ith Degree Connections Finder',
 	description = 'A Pig and Bash tool to find ith-degree connections for a list of '
@@ -101,6 +103,18 @@ ith_degree_search_project = Project(title='Big Data Ith Degree Connections Finde
 ith_degree_search_project.save()
 ith_degree_search_project.skills_list.add(pig_skill, bash_skill, map_reduce_skill, hadoop_skill)
 ith_degree_search_project.save()
+
+
+windchill_project = Project(title='Windchill Visualization',
+	description='A dynamic, visual representation of the Siple windchill formula.',
+	link='/portfolio/windchill/',
+	thumbnail='/static/images/windchill_pic.png',
+	tag_name='windchill',
+	code_link='https://github.com/rowanv/giraffe_viz/blob/master/windchill.py')
+windchill_project.save()
+windchill_project.skills_list.add(python_skill, pandas_library_skill, bokeh_library_skill, numpy_library_skill)
+windchill_project.save()
+
 
 electronegativity_project = Project(title='Electronegativity Table',
 	description='A dynamic representation of Periodic Table electronegativities.',

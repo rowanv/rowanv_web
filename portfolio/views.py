@@ -40,6 +40,9 @@ def gender_olympics_viz(request):
 def brazil_map(request):
 	return render(request, 'visualizations/brazil_map.html')
 
+def voter_turnout_viz(request):
+	return render(request, 'visualizations/voter_turnout_presidential_line_graph.html')
+
 ## Project Views #######
 def geo_twitter(request):
 	return render(request, 'project_pages/geo_twitter.html')
@@ -48,11 +51,16 @@ def research_funding(request):
 	return render(request, 'project_pages/research_funding.html')
 
 def gender_olympics(request):
-
 	return render(request, 'project_pages/gender_olympics.html')
 
 def gender_olympics_ipython(request):
 	return render(request, 'project_pages/Olympic Medal Count Bar Chart - Data Cleaning.html')
+
+def voter_turnout(request):
+	return render(request, 'project_pages/voter_turnout.html')
+
+def voter_turnout_ipython(request):
+	return render(request, 'project_pages/Voter Turnout Data Cleaning and Analysis.ipynb')
 
 
 
