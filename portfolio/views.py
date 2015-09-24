@@ -60,7 +60,7 @@ def voter_turnout(request):
 	return render(request, 'project_pages/voter_turnout.html')
 
 def voter_turnout_ipython(request):
-	return render(request, 'project_pages/Voter Turnout Data Cleaning and Analysis.ipynb')
+	return render(request, 'project_pages/Voter Turnout Data Cleaning and Analysis.html')
 
 
 
