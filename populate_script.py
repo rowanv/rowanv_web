@@ -55,7 +55,34 @@ matplotlib_library_skill.save()
 geo_map_skill = Skill(name='Geomaps')
 geo_map_skill.save()
 
+django_library_skill = Skill(name='Django Library')
+django_library_skill.save()
 
+flask_library_skill = Skill(name='Flask Library')
+flask_library_skill.save()
+
+mysql_database_skill = Skill(name='MySQL Database')
+mysql_database_skill.save()
+
+html_skill = Skill(name='HTML')
+html_skill.save()
+
+css_skill = Skill(name='CSS')
+css_skill.save()
+
+business_dash_project = Project(title='Real-Time Business Dashboard',
+	description='  A dynamic dashboard for visualizing a movie rental company'
+	'\'s key business metrics. Developed end-to-end, reads key metrics'
+	'from a MySQL database and display them in real-time.',
+	link='/portfolio/business_dash/',
+	thumbnail='/static/images/business_dash.png',
+	tag_name='business_dash',
+	code_link='https://github.com/rowanv/giraffe_dash')
+business_dash_project.save()
+business_dash_project.skills_list.add(python_skill, pandas_library_skill,
+	flask_library_skill, mysql_database_skill, java_script_skill,
+	html_skill, css_skill)
+business_dash_project.save()
 
 oecd_project = Project(title='OECD Unemployment Visualization',
 	description='A dynamic visualization of the unemployment rates in OECD countries over the past 15 years.',
@@ -75,7 +102,7 @@ voter_turnout_project = Project(title='Voter Turnout Visualization',
 	tag_name='voter_turnout',
 	code_link='https://github.com/rowanv/giraffe_viz/tree/master/voter_turnout')
 voter_turnout_project.save()
-voter_turnout_project.skills_list.add(java_script_skill, d3_library_skill, 
+voter_turnout_project.skills_list.add(java_script_skill, d3_library_skill,
 	python_skill, pandas_library_skill, matplotlib_library_skill)
 voter_turnout_project.save()
 

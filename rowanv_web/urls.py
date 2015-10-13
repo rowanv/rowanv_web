@@ -43,7 +43,10 @@ urlpatterns = [
         name='gender_olympics_viz'),
     url(r'^portfolio/brazil_map/', views.brazil_map, name='brazil_map'),
     url(r'^portfolio/voter_turnout/', views.voter_turnout, name='voter_turnout'),
-    url(r'^portfolio/voter_turnout_ipython/', views.voter_turnout_ipython, 
+    url(r'^portfolio/voter_turnout_ipython/', views.voter_turnout_ipython,
         name='voter_turnout_ipython'),
-    url(r'^portfolio/voter_turnout_viz/', views.voter_turnout_viz, name='voter_turnout_viz'),
+    url(r'^portfolio/voter_turnout_viz/', views.voter_turnout_viz,
+        name='voter_turnout_viz'),
+    url(r'^portfolio/business_dash/', views.business_dash,
+        name='business_dash'),
 ]
