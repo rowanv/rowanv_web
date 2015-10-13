@@ -49,4 +49,5 @@ urlpatterns = [
         name='voter_turnout_viz'),
     url(r'^portfolio/business_dash/', views.business_dash,
         name='business_dash'),
+    url(r'^portfolio/resume/', views.resume, name='resume'),
 ]

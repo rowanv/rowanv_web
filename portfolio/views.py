@@ -16,6 +16,9 @@ def about(request):
 def skills(request):
 	return render(request, 'skills.html')
 
+def resume(request):
+	return render(request, 'resume.html')
+
 def contact(request):
 	return render(request, 'contact.html')
 
