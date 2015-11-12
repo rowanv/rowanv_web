@@ -72,9 +72,11 @@ css_skill.save()
 
 business_dash_project = Project(title='Real-Time Business Dashboard',
 	description='  A dynamic dashboard for visualizing a movie rental company'
-	'\'s key business metrics. Developed end-to-end, reads key metrics'
-	'from a MySQL database and display them in real-time.',
-	link='/portfolio/business_dash/',
+	'\'s key business metrics. Developed end-to-end to display metrics in real-time.'
+	'Extracts metrics from a MySQL database, transforms data using Python, '
+	'visualizes charts and graphs using d3. Served using nginx and gunicorn '
+	'via the Flask micro-framework.',
+	link='http://dash.rowanv.com',
 	thumbnail='/static/images/business_dash.png',
 	tag_name='business_dash',
 	code_link='https://github.com/rowanv/giraffe_dash')
