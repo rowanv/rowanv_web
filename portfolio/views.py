@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 import os
 
 from portfolio.models import Project, Skill
@@ -21,6 +22,9 @@ def resume(request):
 
 def contact(request):
 	return render(request, 'contact.html')
+
+class BookView(TemplateView):
+	template_name ='book.html'
 
 
 ## Visualization Views ######
