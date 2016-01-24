@@ -70,6 +70,21 @@ html_skill.save()
 css_skill = Skill(name='CSS')
 css_skill.save()
 
+sparklines_dash_project = Project(title='Real-Time Sparklines Dashboard',
+	description= 'A real-time dashboard for quickly visualizing tends in currency '
+	'fluctuations for major currencies over the past month. Developed end-to-end '
+	'to display metrics in real-time. Extracts metrics from the ECB currency '
+	'API, transforms data using Python\'s Pandas, visualizes sparklines using '
+	'd3. Served using nginx and gunicorn via the Flask micro-framework.',
+	link='http://sparklines-dash.rowanv.com',
+	thumbnail='/static/images/sparklines_dash.png',
+	tag_name='sparklines_dash',
+	code_link='https://github.com/rowanv/sparklines_dash')
+sparklines_dash_project.save()
+sparklines_dash_project.skills_list.add(python_skill, pandas_library_skill,
+	flask_library_skill, java_script_skill, d3_library_skill, html_skill,
+	css_skill)
+
 business_dash_project = Project(title='Real-Time Business Dashboard',
 	description='  A dynamic dashboard for visualizing a movie rental company'
 	'\'s key business metrics. Developed end-to-end to display metrics in real-time.'
@@ -83,7 +98,7 @@ business_dash_project = Project(title='Real-Time Business Dashboard',
 business_dash_project.save()
 business_dash_project.skills_list.add(python_skill, pandas_library_skill,
 	flask_library_skill, mysql_database_skill, java_script_skill,
-	html_skill, css_skill)
+	html_skill, css_skill, d3_library_skill)
 business_dash_project.save()
 
 oecd_project = Project(title='OECD Unemployment Visualization',
