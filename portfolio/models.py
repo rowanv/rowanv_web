@@ -3,6 +3,9 @@ from django.utils import timezone
 
 
 class Skill(models.Model):
+    '''
+    Stores a single skill
+    '''
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -10,6 +13,9 @@ class Skill(models.Model):
 
 
 class Project(models.Model):
+    '''
+    Stores a single project, related to :model:`Skill`
+    '''
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=400)
     current_project = models.BooleanField(default=False)

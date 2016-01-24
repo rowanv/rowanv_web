@@ -1,17 +1,33 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.views.generic import TemplateView
-import os
 
 from portfolio.models import Project, Skill
 
 
 def portfolio(request):
+    '''
+    Display all projects.
+
+    **Context**
+
+    ``projects_list``: all Project objects
+    ``all_skills_list``: all Skill objects
+
+    **Template**:
+    :template:`portfolio.html`
+    '''
     return render(request, 'portfolio.html', {'projects_list': Project.objects.all(),
                                               'all_skills_list': [o.name for o in Skill.objects.all()]})
 
 
 def about(request):
+    '''
+    Display about page.
+
+    **Template**:
+    :template:`about.html`
+    '''
     return render(request, 'about.html')
 
 
