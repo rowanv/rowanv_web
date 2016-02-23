@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.4"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+# command to run tests
+before_script:
+# Change to QA settings
+- cp rowanv_web/settings_qa.py rowanv_web/settings.py
+- python manage.py collectstatic --noinput
+# Get DB set up
+- python manage.py makemigrations --noinput
+- python manage.py migrate --noinput
+- python manage.py flush --noinput
+# Populate portfolio
+- python manage.py shell < populate_script.py
+
+script: python manage.py test
