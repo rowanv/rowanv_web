@@ -1,11 +1,16 @@
 language: python
 python:
   - "3.4"
-  - "3.5"
+# Use firefox with xvfb to run a browser for our FTs
+before_install:
+    - "export DISPLAY=:99.0"
+    - "sh -e /etc/init.d/xvfb start"
+    - sleep 3 # give xvfb some time to start
 # command to install dependencies
+
 install:
   - pip install -r requirements.txt
-# command to run tests
+
 before_script:
 # Change to QA settings
 - cp rowanv_web/settings_qa.py rowanv_web/settings.py
