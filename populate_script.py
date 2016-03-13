@@ -70,6 +70,9 @@ html_skill.save()
 css_skill = Skill(name='CSS')
 css_skill.save()
 
+ajax_skill = Skill(name='Ajax')
+ajax_skill.save()
+
 sparklines_dash_project = Project(
     title='Real-Time Sparklines Dashboard',
     description='A real-time dashboard for quickly visualizing tends in currency '
@@ -144,6 +147,23 @@ voter_turnout_project.skills_list.add(
     pandas_library_skill,
     matplotlib_library_skill)
 voter_turnout_project.save()
+
+finders_keepers_project = Project(
+    title='Finders Keepers App',
+    description='A Django-based application that leverages the Google'
+    ' Maps API to determine wheter a clicked-on location has an '
+    'address or not.',
+    link='http://finderskeepers.rowanv.com/',
+    thumbnail='/static/images/finders_keepers.png',
+    tag_name='finders_keepers',
+    code_link='https://github.com/rowanv/finders_keepers')
+finders_keepers_project.save()
+finders_keepers_project.skills_list.add(
+    java_script_skill,
+    python_skill,
+    django_library_skill,
+    ajax_skill)
+finders_keepers_project.save()
 
 gender_olympics_project = Project(
     title='Gender and the Olympics Visualization',
