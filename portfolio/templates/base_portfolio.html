@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,11 +58,13 @@
                         <a href="{% url 'services' %}">Services</a>
                     </li>
                     <li>
+                        <a href="{% url 'portfolio_projects' %}">Projects</a>
+                    <li>
                         <a href="https://thisweekinawsdata.com">AWS Data Newsletter</a>
                     </li>
-                    <li>
-                        <a href="/portfolio/resume">Resume</a>
-                    </li>
+                    <!--li>
+                        <a href="">Resume</a>
+                    </li-->
                     <li>
                         <a href="/portfolio/contact/">Contact</a>
                     </li>
@@ -77,8 +80,13 @@
     {% block content %}
 
     {% endblock %}
+
+
     </div>
     <!-- /.container -->
+
+
+    <!-- Tags -->
 
     <!-- jQuery -->
     <script src="/static/js/jquery.js"></script>

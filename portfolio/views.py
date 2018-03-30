@@ -6,19 +6,9 @@ from portfolio.models import Project, Skill, PastWorkEngagement
 
 
 def portfolio(request):
-    '''
-    Display all projects.
-
-    **Context**
-
-    ``projects_list``: all Project objects
-    ``all_skills_list``: all Skill objects
-
-    **Template**:
-    :template:`portfolio.html`
-    '''
-    return render(request, 'portfolio_home.html', {'projects_list': Project.objects.all(),
-                                              'all_skills_list': [o.name for o in Skill.objects.all()]})
+    return render(request, 'portfolio_home.html', {
+        'projects_list': Project.objects.all(),
+        'top_past_work_engagement_list': PastWorkEngagement.objects.all()[:3]})
 
 
 def about(request):
@@ -29,6 +19,12 @@ def about(request):
     :template:`about.html`
     '''
     return render(request, 'about.html')
+
+
+class PortfolioProjectsView(ListView):
+
+    model = Project
+    template_name = 'portfolio_projects.html'
 
 
 class ServicesView(ListView):

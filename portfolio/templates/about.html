@@ -1,4 +1,5 @@
 {% extends 'base_portfolio.html' %}
+{% load static %}
 
 {% block content %}
 <br>
@@ -6,12 +7,15 @@
 <br>
 <div class='col-md-2'>
 </div>
-<div class='col-md-6 text-justify'>
+<div class='col-sm-8 text-justify'>
     <p>
-    I am a Freelance Python Full-Stack Data Developer. In short, I solve data-related problems. I've worked for Twitter, the Inter-American Development Bank, and a number of startups in the data space in the past. I have a B.S. from MIT, and am passionate about quantitative investigative methods and data products.</p>
+    I am a Big Data and AWS Solutions Architect Consultant. In short, I solve Big Data-related problems. I've worked for Twitter, the Inter-American Development Bank, and a number of startups in the data space in the past. I am an AWS Certified Solutions Architect, and am ranked within the top 1% on Kaggle. I have a B.S. from MIT, and am passionate about helping teams architect resilient, scalable data architectures.</p>
     <br>
-    <p>
-    My work in the past has primarily focused in data-related applications, including data science work, ETL pipelines, end-to-end ETL applications, dashboard creation, custom interactive visualizations, predictive modeling, and full stack Python web dev work with Django and Flask. I'm also proficient with big data tools (Pig, Scalding, etc.) used within the Hadoop ecosystem to obtain valuable, revenue-related insights.</p>
+    <p>For more information about my past consulting work and skills, please view the <a href="{% url 'services' %}">Services</a> section.</p>
+    <br>
 
+    <div class='col-sm-4 col-sm-offset-4'>
+    	<img class='img-responsive' src='/static/images/aws_certified_saa_badge.png' %}">
+    </div>
 </div>
 {% endblock %}

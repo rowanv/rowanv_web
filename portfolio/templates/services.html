@@ -3,28 +3,21 @@
 {% block content %}
 <br>
 <br>
-<br>
 <div class='col-md-7 text-justify col-md-offset-2'>
-	<br>
-	<br>
-	<p>I am a Big Data and AWS Solutions Architect that provides business value by solving data problems. My past work experience has primarily consisted of architecting Big Data solutions, building out custom data engineering projects, and undertaking custom data science analysis for specific business needs.</p>
-
-	<h6>Credentials:</h6>
-	<ul>
-		<li>Experienced Big Data professional, worked for Twitter, etc.</li>
-		<li>B.S. From MIT</li>
-		<li>AWS Certified Solutions Architect Associate</li>
-		<li>Top 1% Kaggle</li>
-	</ul>
-	<br>
-	<p>For more information about the type of work that I do, take a look at some of the recent consulting engagements I have undertaken:<p>
-	<ul>
-		{% for past_engagement in object_list %}
-			<li>{{ past_engagement.description }}</li>
-		{% endfor %}
-	</ul>
-
-
+    <br>
+    <br>
+    <p>I am a Big Data and AWS Solutions Architect that provides business value by solving data problems. My past work experience has primarily consisted of architecting Big Data solutions, building out custom data engineering projects, and undertaking custom data science analysis for specific business needs.</p>
+    <br>
+    <br>
+    <p>For more information about the type of work that I do, take a look at some of the recent consulting engagements I have undertaken:<p>
+    <div class='col-md-11'>
+        <ul>
+            {% for past_engagement in object_list %}
+                <li>{{ past_engagement.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
+<br>
 
 {% endblock %}

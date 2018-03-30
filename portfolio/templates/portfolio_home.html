@@ -3,117 +3,48 @@
 {% block content %}
 
 
+    <div class='col-sm-6'>
+        <h3 class='text-center'>Recent Client Work</h3>
+        <br>
+        <ul>
+        {% for engagement in top_past_work_engagement_list %}
+            <li>{{ engagement.description }}</li>
+        {% endfor %}
+        </ul>
+        <br>
+        <div class='row text-center'>
+        <a class='btn btn-primary' 
+           href="{% url 'services' %}"
+           >View More Recent Work</a></div>
+        <br>
+        <br>
+    </div>
+    <div class='col-sm-6'>
+        <h3 class='text-center'>Portfolio Projects</h3>
+            {% for proj in projects_list|slice:":1"  %}
 
-
-
-
-        <!-- Page Heading -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Past Projects
-                    <!--small>Secondary Text</small>-->
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        {% if projects_list %}
-            {% for proj in projects_list %}
-
-         <div class="row">
-            <div class="col-md-7">
+            <div >
                 <a href="{{ proj.link }}">
-                    <img class="img-responsive" src="{{ proj.thumbnail }}" alt="oecd unemployment pic">
-                    <!--img class="img-responsive" src="" alt="oecd unemployment pic"-->
+                    <img class="img-responsive" src="{{ proj.thumbnail }}">
                 </a>
             </div>
-            <div class="col-md-5">
+            <div >
                 <h3>{{ proj.title }}</h3>
                 <br>
-                <h4></h4>
-                <p>{{ proj.description }}</p>
-                <div id="{{ proj.tag_name }}_tag" class="tag-list">
-
-                    Skills:
-                    {% for skill in proj.skills_list.all %}
-                    {{ skill.name }} |
-                    {% endfor %}
-                </div>
-
-
-                <br>
-
-                <div>
-                    <div style='float:right;padding-right:35px'>
-                    <a class="btn btn-primary" href="{{ proj.link }}">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-                    </div>
-
-                    {% if proj.code_link %}
-                    <div id='{{ proj.tag_name }}_code' style='float:left;padding-left:25px;' >
-                    Code :
-                    <a href='{{ proj.code_link }}'>
-                        <img src='/static/images/github_icon.ico'>
-                    </a>
-                    </div>
-                    {% endif %}
-                </div>
+                <p>{{ proj.description|slice:":100" }}...</p>
             </div>
         </div>
 
-        <hr>
-        <br>
-            {% endfor %}
-        {% endif %}
-
-
-
-
-
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <!--
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                -->
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
+    {% endfor %}
+    <div class='row text-center'>
+        <a class='btn btn-primary' href="{% url 'portfolio_projects' %}">View More Projects</a>
+    </div>
         </div>
-        <!-- /.row -->
 
-        <hr>
 
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Rowan V 2018</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
-
-        <!-- Tags -->
+        
+    </div>
 
 
 {% endblock %}

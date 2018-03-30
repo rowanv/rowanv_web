@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^portfolio/about/', views.about, name='about'),
     url(r'^portfolio/contact/', views.contact, name='contact'),
     url(r'^portfolio/services/', views.ServicesView.as_view(), name='services'),
+    url(r'^portfolio/projects/', views.PortfolioProjectsView.as_view(), name='portfolio_projects'),
     url(r'^portfolio/book/', views.BookView.as_view(), name='book'),
     url(r'^portfolio/electronegativity/', views.electronegativity, name='electronegativity'),
     url(r'^portfolio/geo_twitter/', views.geo_twitter, name='geo_twitter'),

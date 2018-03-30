@@ -1,4 +1,4 @@
-from portfolio.models import Skill, Project, PastWorkEnagement
+from portfolio.models import Skill, Project, PastWorkEngagement
 
 
 # Past Work Engagements
@@ -7,7 +7,7 @@ past_engagement_descriptions = [
      'startup in the AWS cloud'),
     ('Increased the efficiency of a Big Data pipeline by using machine '
      'learning to automate anomaly detection'),
-    ('Greatly improved the efficiency of a startup’s analytics queries by '
+    ('Greatly improved the efficiency of a startup\'s analytics queries by '
      'architecting and migrating a data warehouse solution that leveraged '
      'Amazon Redshift'),
     ('Enabled a company to answer oversight and compliance-related questions '
