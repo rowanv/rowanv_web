@@ -6,3 +6,5 @@ Flask==0.10.1
 Flask-Bower==1.2.1
 SQLAlchemy==1.0.8
 pandas==0.16.2
+psycopg2==2.7.4
+pyyaml==3.12
