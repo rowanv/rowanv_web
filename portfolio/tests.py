@@ -9,7 +9,7 @@ from django.core.urlresolvers import resolve
 from django.core.exceptions import ValidationError
 
 import portfolio.views as views
-from portfolio.models import Project
+from portfolio.models import Project, PastWorkEngagement
 
 
 class PageViewTest(TestCase):
@@ -21,10 +21,6 @@ class PageViewTest(TestCase):
     def test_about_url_resolves_to_about_page_view(self):
         found = resolve('/portfolio/about/')
         self.assertEqual(found.func, views.about)
-
-    def test_skills_url_resolves_to_skills_page_view(self):
-        found = resolve('/portfolio/skills/')
-        self.assertEqual(found.func, views.skills)
 
     def test_resume_url_resolves_to_resume_view(self):
         found = resolve('/portfolio/resume/')
@@ -45,3 +41,15 @@ class ProjectModelTest(TestCase):
 
     def test_tags_are_related_to_projects(self):
         pass
+
+
+class ServicesViewTest(TestCase):
+
+    def setUp(self):
+        engagement = PastWorkEngagement(description='a past work description')
+        engagement.full_clean()
+        engagement.save()
+
+    def test_can_view_services_in_services_view(self):
+        response = self.client.get('/portfolio/services/')
+        self.assertContains(response, 'a past work description')

@@ -4,37 +4,27 @@
 <br>
 <br>
 <br>
-<div class='col-md-2'>
-</div>
-<div class='col-md-7 text-justify'>
+<div class='col-md-7 text-justify col-md-offset-2'>
 	<br>
 	<br>
+	<p>I am a Big Data and AWS Solutions Architect that provides business value by solving data problems. My past work experience has primarily consisted of architecting Big Data solutions, building out custom data engineering projects, and undertaking custom data science analysis for specific business needs.</p>
 
-	I solve data-related problems. I use data science and full-stack data development tools to generate analysis and applications. I follow an agile, test-driven development methodology. My preferred toolset is as follows:
+	<h6>Credentials:</h6>
+	<ul>
+		<li>Experienced Big Data professional, worked for Twitter, etc.</li>
+		<li>B.S. From MIT</li>
+		<li>AWS Certified Solutions Architect Associate</li>
+		<li>Top 1% Kaggle</li>
+	</ul>
 	<br>
-	<br>
-
-	<ul class='dl-horizontal'>
-		<dt>Languages</dt>
-		<dd>Primarily Python and R, with Bash to glue it all together.</dd>
-		<dt>Web Frameworks</dt>
-		<dd>Python's Django and Flask</dd>
-		<dt>Visualization Libraries</dt>
-		<dd>R's ggplot2 and Python's matplotlib for static visualizations. <br>
-			Python's Bokeh and JavaScript's D3 for dynamic visualizations. <br>
-			Python's Bokeh for dashboards.</dd>
-		<dt>Big Data Tools</dt>
-		<dd>Pig and Scalding are my preferred Map Reduce abstraction layers. <br>Together with Python, R, and Bash, I have experience utilizing these tools <br>
-		within the Hadoop File System to make large amounts of data manageable.</dd>
-		<dt>Back End</dt>
-		<dd>Nginx, Gunicorn, MySQL-driven databases</dd>
-		<dt>Version Control</dt>
-		<dd>Git, Subversion </dd>
-		<dt>Testing Frameworks</dt>
-		<dd>Selenium </dd>
+	<p>For more information about the type of work that I do, take a look at some of the recent consulting engagements I have undertaken:<p>
+	<ul>
+		{% for past_engagement in object_list %}
+			<li>{{ past_engagement.description }}</li>
+		{% endfor %}
 	</ul>
 
-	However, I have experience with other technologies and am always happy to work with the stack that is best suited for the job at hand.
+
 </div>
 
 {% endblock %}

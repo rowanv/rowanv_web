@@ -1,8 +1,8 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
-from portfolio.models import Project, Skill
+from portfolio.models import Project, Skill, PastWorkEngagement
 
 
 def portfolio(request):
@@ -17,7 +17,7 @@ def portfolio(request):
     **Template**:
     :template:`portfolio.html`
     '''
-    return render(request, 'portfolio.html', {'projects_list': Project.objects.all(),
+    return render(request, 'portfolio_home.html', {'projects_list': Project.objects.all(),
                                               'all_skills_list': [o.name for o in Skill.objects.all()]})
 
 
@@ -31,8 +31,10 @@ def about(request):
     return render(request, 'about.html')
 
 
-def skills(request):
-    return render(request, 'skills.html')
+class ServicesView(ListView):
+
+    model = PastWorkEngagement
+    template_name = 'services.html'
 
 
 def resume(request):

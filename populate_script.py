@@ -1,5 +1,30 @@
-from portfolio.models import Skill, Project
+from portfolio.models import Skill, Project, PastWorkEnagement
 
+
+# Past Work Engagements
+past_engagement_descriptions = [
+    ('Architected a scalable, distributed Big Data system for an early-stage '
+     'startup in the AWS cloud'),
+    ('Increased the efficiency of a Big Data pipeline by using machine '
+     'learning to automate anomaly detection'),
+    ('Greatly improved the efficiency of a startup’s analytics queries by '
+     'architecting and migrating a data warehouse solution that leveraged '
+     'Amazon Redshift'),
+    ('Enabled a company to answer oversight and compliance-related questions '
+     'by undertaking a custom Data Science analysis of access logs as part of '
+     'an auditing process'),
+    ('Enabled a company to deliver a valuable visual analytics solution to their'
+     'clients by architecting and building out a cloud-based data architecture '
+     'and consumer-facing dashboard solution for a mid-size company.'),
+]
+
+for description in past_engagement_descriptions:
+    past_engagement, _ = PastWorkEngagement.objects.get_or_create(description=description)
+    past_engagement.full_clean()
+    past_engagement.save()
+
+
+# Skills
 
 r_skill = Skill(name='R')
 r_skill.save()
@@ -273,10 +298,12 @@ housing_prices_project.save()
 research_funding_project = Project(
     title='Research Funding Predictions Project',
     description='I explore the following research question: "What determines the levels of'
-    'funding that an NSF or NASA-funded project receives?".  I define high levels of research'
-    'funding as the upper decile for the original, raw funding variable. I then use text '
-    'analytics to determine the words in the abstract that were correlated'
-    'with high levels of funding. Using CART, logistic regression, and Random Forest models,'
+    'funding that an NSF or NASA-funded project receives?".'
+    #'I define high levels of research'
+    #'funding as the upper decile for the original, raw funding variable. I then use text '
+    #'analytics to determine the words in the abstract that were correlated'
+    #'with high levels of funding.
+    'Using CART, logistic regression, and Random Forest models,'
     'I am able to predict whether a research project is likely to have received high levels of funding'
     'with around 90% accuracy.',
     link='https://github.com/rowanv/pred-res-fund',

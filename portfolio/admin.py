@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Skill, Project
+from .models import Skill, Project, PastWorkEngagement
 
 
 class SkillAdmin(admin.ModelAdmin):
@@ -16,5 +16,11 @@ class ProjectAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description', )
 
 
+class PastWorkEngagementAdmin(admin.ModelAdmin):
+	list_display = ('description', )
+	search_fields = ('description', )
+
+
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(PastWorkEngagement, PastWorkEngagementAdmin)

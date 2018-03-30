@@ -55,8 +55,8 @@ sed "s/SITENAME/rowanv.com/g" \
     /etc/init/gunicorn-rowanv.com.conf
 
 sudo service nginx reload
-sudo start gunicorn-rowanv.com
-# or sudo restart gunicorn-rowanv.com
+# sudo start gunicorn-rowanv.com
+sudo restart gunicorn-rowanv.com
 
 ../virtualenv/bin/python3 manage.py makemigrations
 ../virtualenv/bin/python3 manage.py migrate
