@@ -29,3 +29,12 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class PastWorkEngagement(models.Model):
+    """
+    Stores a single work engagement.
+    """
+    description = models.CharField(max_length=400)
+
+
