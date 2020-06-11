@@ -26,6 +26,7 @@ class Project(models.Model):
     tag_name = models.CharField(max_length=100)
     skills_list = models.ManyToManyField(Skill)
     code_link = models.CharField(max_length=200, null=True)
+    order_by_integer = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.title

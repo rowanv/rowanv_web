@@ -7,7 +7,7 @@ from portfolio.models import Project, Skill, PastWorkEngagement
 
 def portfolio(request):
     return render(request, 'portfolio_home.html', {
-        'projects_list': Project.objects.all(),
+        'projects_list': Project.objects.all().order_by('order_by_integer'),
         'top_past_work_engagement_list': PastWorkEngagement.objects.all()[:3]})
 
 

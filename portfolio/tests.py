@@ -39,8 +39,10 @@ class ProjectModelTest(TestCase):
             project.save()
             project.full_clean()
 
-    def test_tags_are_related_to_projects(self):
-        pass
+    def test_can_use_order_by(self):
+        project = Project(order_by=1)
+        project.full_clean()
+        project.save()
 
 
 class ServicesViewTest(TestCase):
