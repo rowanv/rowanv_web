@@ -366,3 +366,5 @@ social_media_dashboard_project.skills_list.add(
     pandas_library_skill,
     data_science_skill)
 social_media_dashboard_project.save()
+
+# Also added AWS Architecture Visualization
